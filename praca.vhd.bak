@@ -1,0 +1,12 @@
+library ieee;
+use ieee.std_logic_1164;
+use ieee.numeric_std;
+
+entity praca is
+port(
+clock_24:in std_logic_vector(1 downto 0);
+vga_hs, vga_vs: out std_logic;
+vga_r,vga_g,vga_b: out std_logic_vector(3 downto 0);
+
+);
+end praca;
