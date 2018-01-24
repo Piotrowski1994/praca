@@ -2,7 +2,7 @@ set_global_assignment -entity "PLL" -library "PLL" -name IP_TOOL_NAME "Qsys"
 set_global_assignment -entity "PLL" -library "PLL" -name IP_TOOL_VERSION "17.0"
 set_global_assignment -entity "PLL" -library "PLL" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "PLL" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../../PLL.sopcinfo"]
-set_global_assignment -entity "PLL" -library "PLL" -name SLD_INFO "QSYS_NAME PLL HAS_SOPCINFO 1 GENERATION_ID 1513034812"
+set_global_assignment -entity "PLL" -library "PLL" -name SLD_INFO "QSYS_NAME PLL HAS_SOPCINFO 1 GENERATION_ID 1516140386"
 set_global_assignment -library "PLL" -name SLD_FILE [file join $::quartus(qip_path) "PLL.debuginfo"]
 set_global_assignment -entity "PLL" -library "PLL" -name IP_TARGETED_DEVICE_FAMILY "MAX 10"
 set_global_assignment -entity "PLL" -library "PLL" -name IP_GENERATED_DEVICE_FAMILY "{MAX 10}"
@@ -14,7 +14,7 @@ set_global_assignment -entity "PLL" -library "PLL" -name IP_COMPONENT_DISPLAY_NA
 set_global_assignment -entity "PLL" -library "PLL" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "PLL" -library "PLL" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "PLL" -library "PLL" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "PLL" -library "PLL" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTUxMzAzNDgxMg==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "PLL" -library "PLL" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTUxNjE0MDM4Ng==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "PLL" -library "PLL" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::TUFYIDEw::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "PLL" -library "PLL" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::MTBNNTBEQUY0ODRDN0c=::QXV0byBERVZJQ0U="
 set_global_assignment -entity "PLL" -library "PLL" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Nw==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="

@@ -1,15 +1,15 @@
-Analysis & Synthesis Status : Successful - Tue Dec 12 01:43:34 2017
+Analysis & Synthesis Status : Successful - Wed Jan 24 03:10:14 2018
 Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 Revision Name : praca
 Top-level Entity Name : PRACA
 Family : MAX 10
-Total logic elements : 57
-    Total combinational functions : 47
-    Dedicated logic registers : 36
-Total registers : 36
-Total pins : 16
+Total logic elements : 524
+    Total combinational functions : 516
+    Dedicated logic registers : 92
+Total registers : 92
+Total pins : 49
 Total virtual pins : 0
-Total memory bits : 0
+Total memory bits : 180,224
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 1
 UFM blocks : 0

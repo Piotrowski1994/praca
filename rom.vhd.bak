@@ -1,0 +1,19 @@
+1 ------------------------------------------------------------------
+2 LIBRARY ieee;
+3 USE ieee.std_logic_1164.all;
+4 ------------------------------------------------------------------
+5 ENTITY rom IS
+6 PORT (address: IN INTEGER RANGE 0 TO 15;
+7 data_out: OUT STD_LOGIC_VECTOR(7 DOWNTO 0));
+8 END rom;
+9 ------------------------------------------------------------------
+10 ARCHITECTURE main OF rom IS
+11 SIGNAL reg_address: INTEGER RANGE 0 TO 15;
+12 TYPE memory IS ARRAY (0 TO 15) OF STD_LOGIC_VECTOR(7 DOWNTO 0);
+13 SIGNAL myrom: memory;
+14 ATTRIBUTE ram_init_file: STRING;
+15 ATTRIBUTE ram_init_file OF myrom: SIGNAL IS "rom_contents.mif";
+16 BEGIN
+17 data_out <= myrom(address);
+18 END rom;
+19 ------------------------------------------------------------------

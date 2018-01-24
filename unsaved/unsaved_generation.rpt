@@ -1,0 +1,36 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\intelFPGA_lite\praca\unsaved.qsys --block-symbol-file --output-directory=C:\intelFPGA_lite\praca\unsaved --family="MAX 10" --part=10M50DAF484C7G
+Progress: Loading praca/unsaved.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 17.0]
+Progress: Parameterizing module clk_0
+Progress: Adding dual_boot_0 [altera_dual_boot 17.0]
+Progress: Parameterizing module dual_boot_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: unsaved.dual_boot_0: dual_boot_0.avalon must be connected to an Avalon-MM master
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\intelFPGA_lite\praca\unsaved.qsys --synthesis=VERILOG --output-directory=C:\intelFPGA_lite\praca\unsaved\synthesis --family="MAX 10" --part=10M50DAF484C7G
+Progress: Loading praca/unsaved.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 17.0]
+Progress: Parameterizing module clk_0
+Progress: Adding dual_boot_0 [altera_dual_boot 17.0]
+Progress: Parameterizing module dual_boot_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: unsaved.dual_boot_0: dual_boot_0.avalon must be connected to an Avalon-MM master
+Info: unsaved: Generating unsaved "unsaved" for QUARTUS_SYNTH
+Info: dual_boot_0: generating top-level entity altera_dual_boot
+Info: dual_boot_0: "unsaved" instantiated altera_dual_boot "dual_boot_0"
+Info: rst_controller: "unsaved" instantiated altera_reset_controller "rst_controller"
+Info: unsaved: Done "unsaved" with 3 modules, 7 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

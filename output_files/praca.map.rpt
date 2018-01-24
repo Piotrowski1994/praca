@@ -1,5 +1,5 @@
 Analysis & Synthesis report for praca
-Tue Dec 12 01:43:34 2017
+Wed Jan 24 03:10:14 2018
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -13,17 +13,29 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis IP Cores Summary
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Source assignments for PLLL:C|PLLL_altpll_0:altpll_0
- 12. Source assignments for PLLL:C|PLLL_altpll_0:altpll_0|PLLL_altpll_0_stdsync_sv6:stdsync2|PLLL_altpll_0_dffpipe_l2c:dffpipe3
- 13. Port Connectivity Checks: "PLLL:C|PLLL_altpll_0:altpll_0|PLLL_altpll_0_altpll_ft22:sd1"
- 14. Port Connectivity Checks: "PLLL:C|PLLL_altpll_0:altpll_0"
- 15. Port Connectivity Checks: "PLLL:C"
- 16. Post-Synthesis Netlist Statistics for Top Partition
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for PLLL:C|PLLL_altpll_0:altpll_0
+ 15. Source assignments for PLLL:C|PLLL_altpll_0:altpll_0|PLLL_altpll_0_stdsync_sv6:stdsync2|PLLL_altpll_0_dffpipe_l2c:dffpipe3
+ 16. Source assignments for rom2:c0|altsyncram:altsyncram_component|altsyncram_vlt3:auto_generated
+ 17. Parameter Settings for User Entity Instance: rom2:c0|altsyncram:altsyncram_component
+ 18. Parameter Settings for Inferred Entity Instance: monit2:C2|lpm_divide:Div0
+ 19. Parameter Settings for Inferred Entity Instance: monit2:C2|lpm_divide:Div1
+ 20. altsyncram Parameter Settings by Entity Instance
+ 21. Port Connectivity Checks: "monit4:C4"
+ 22. Port Connectivity Checks: "monit3:C3"
+ 23. Port Connectivity Checks: "monit2:C2"
+ 24. Port Connectivity Checks: "monit1:C1"
+ 25. Port Connectivity Checks: "PLLL:C|PLLL_altpll_0:altpll_0|PLLL_altpll_0_altpll_2q22:sd1"
+ 26. Port Connectivity Checks: "PLLL:C|PLLL_altpll_0:altpll_0"
+ 27. Port Connectivity Checks: "PLLL:C"
+ 28. Post-Synthesis Netlist Statistics for Top Partition
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
 
 
 
@@ -50,18 +62,18 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Dec 12 01:43:34 2017       ;
+; Analysis & Synthesis Status        ; Successful - Wed Jan 24 03:10:14 2018       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; praca                                       ;
 ; Top-level Entity Name              ; PRACA                                       ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 57                                          ;
-;     Total combinational functions  ; 47                                          ;
-;     Dedicated logic registers      ; 36                                          ;
-; Total registers                    ; 36                                          ;
-; Total pins                         ; 16                                          ;
+; Total logic elements               ; 524                                         ;
+;     Total combinational functions  ; 516                                         ;
+;     Dedicated logic registers      ; 92                                          ;
+; Total registers                    ; 92                                          ;
+; Total pins                         ; 49                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
+; Total memory bits                  ; 180,224                                     ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total PLLs                         ; 1                                           ;
 ; UFM blocks                         ; 0                                           ;
@@ -172,16 +184,45 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                             ;
-+-------------------------------------------+-----------------+------------------------+-------------------------------------------------------------------+---------+
-; File Name with User-Entered Path          ; Used in Netlist ; File Type              ; File Name with Absolute Path                                      ; Library ;
-+-------------------------------------------+-----------------+------------------------+-------------------------------------------------------------------+---------+
-; PLLL/synthesis/PLLL.v                     ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/praca/PLLL/synthesis/PLLL.v                     ; PLLL    ;
-; PLLL/synthesis/submodules/PLLL_altpll_0.v ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/praca/PLLL/synthesis/submodules/PLLL_altpll_0.v ; PLLL    ;
-; praca.vhd                                 ; yes             ; User VHDL File         ; C:/intelFPGA_lite/praca/praca.vhd                                 ;         ;
-; Vhdl2.vhd                                 ; yes             ; User VHDL File         ; C:/intelFPGA_lite/praca/Vhdl2.vhd                                 ;         ;
-+-------------------------------------------+-----------------+------------------------+-------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                               ;
++--------------------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                 ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                 ; Library ;
++--------------------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
+; unsaved/synthesis/submodules/rtl/alt_dual_boot.v ; yes             ; Encrypted User Verilog HDL File        ; C:/intelFPGA_lite/praca/unsaved/synthesis/submodules/rtl/alt_dual_boot.v     ; unsaved ;
+; PLLL/synthesis/PLLL.v                            ; yes             ; User Verilog HDL File                  ; C:/intelFPGA_lite/praca/PLLL/synthesis/PLLL.v                                ; PLLL    ;
+; PLLL/synthesis/submodules/PLLL_altpll_0.v        ; yes             ; User Verilog HDL File                  ; C:/intelFPGA_lite/praca/PLLL/synthesis/submodules/PLLL_altpll_0.v            ; PLLL    ;
+; praca.vhd                                        ; yes             ; User VHDL File                         ; C:/intelFPGA_lite/praca/praca.vhd                                            ;         ;
+; Vhdl2.vhd                                        ; yes             ; User VHDL File                         ; C:/intelFPGA_lite/praca/Vhdl2.vhd                                            ;         ;
+; Vhdl1.vhd                                        ; yes             ; User VHDL File                         ; C:/intelFPGA_lite/praca/Vhdl1.vhd                                            ;         ;
+; monit3.vhd                                       ; yes             ; User VHDL File                         ; C:/intelFPGA_lite/praca/monit3.vhd                                           ;         ;
+; monit4.vhd                                       ; yes             ; User VHDL File                         ; C:/intelFPGA_lite/praca/monit4.vhd                                           ;         ;
+; rom2.vhd                                         ; yes             ; User Wizard-Generated File             ; C:/intelFPGA_lite/praca/rom2.vhd                                             ;         ;
+; altsyncram.tdf                                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc                            ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal170.inc                                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/aglobal170.inc        ;         ;
+; a_rdenreg.inc                                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_vlt3.tdf                           ; yes             ; Auto-Generated Megafunction            ; C:/intelFPGA_lite/praca/db/altsyncram_vlt3.tdf                               ;         ;
+; ../../../Users/Marcin/Documents/MATLAB/logo.mif  ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Marcin/Documents/MATLAB/logo.mif                                    ;         ;
+; db/decode_2j9.tdf                                ; yes             ; Auto-Generated Megafunction            ; C:/intelFPGA_lite/praca/db/decode_2j9.tdf                                    ;         ;
+; db/mux_43b.tdf                                   ; yes             ; Auto-Generated Megafunction            ; C:/intelFPGA_lite/praca/db/mux_43b.tdf                                       ;         ;
+; lpm_divide.tdf                                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_divide.tdf        ;         ;
+; abs_divider.inc                                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/abs_divider.inc       ;         ;
+; sign_div_unsign.inc                              ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sign_div_unsign.inc   ;         ;
+; db/lpm_divide_ktl.tdf                            ; yes             ; Auto-Generated Megafunction            ; C:/intelFPGA_lite/praca/db/lpm_divide_ktl.tdf                                ;         ;
+; db/sign_div_unsign_mlh.tdf                       ; yes             ; Auto-Generated Megafunction            ; C:/intelFPGA_lite/praca/db/sign_div_unsign_mlh.tdf                           ;         ;
+; db/alt_u_div_mhe.tdf                             ; yes             ; Auto-Generated Megafunction            ; C:/intelFPGA_lite/praca/db/alt_u_div_mhe.tdf                                 ;         ;
+; db/add_sub_t3c.tdf                               ; yes             ; Auto-Generated Megafunction            ; C:/intelFPGA_lite/praca/db/add_sub_t3c.tdf                                   ;         ;
+; db/add_sub_u3c.tdf                               ; yes             ; Auto-Generated Megafunction            ; C:/intelFPGA_lite/praca/db/add_sub_u3c.tdf                                   ;         ;
+; db/lpm_divide_ltl.tdf                            ; yes             ; Auto-Generated Megafunction            ; C:/intelFPGA_lite/praca/db/lpm_divide_ltl.tdf                                ;         ;
+; db/sign_div_unsign_nlh.tdf                       ; yes             ; Auto-Generated Megafunction            ; C:/intelFPGA_lite/praca/db/sign_div_unsign_nlh.tdf                           ;         ;
+; db/alt_u_div_ohe.tdf                             ; yes             ; Auto-Generated Megafunction            ; C:/intelFPGA_lite/praca/db/alt_u_div_ohe.tdf                                 ;         ;
++--------------------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------+
@@ -189,48 +230,73 @@ agreement for further details.
 +---------------------------------------------+------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                        ;
 +---------------------------------------------+------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 57                                                                           ;
+; Estimated Total logic elements              ; 524                                                                          ;
 ;                                             ;                                                                              ;
-; Total combinational functions               ; 47                                                                           ;
+; Total combinational functions               ; 516                                                                          ;
 ; Logic element usage by number of LUT inputs ;                                                                              ;
-;     -- 4 input functions                    ; 18                                                                           ;
-;     -- 3 input functions                    ; 4                                                                            ;
-;     -- <=2 input functions                  ; 25                                                                           ;
+;     -- 4 input functions                    ; 128                                                                          ;
+;     -- 3 input functions                    ; 155                                                                          ;
+;     -- <=2 input functions                  ; 233                                                                          ;
 ;                                             ;                                                                              ;
 ; Logic elements by mode                      ;                                                                              ;
-;     -- normal mode                          ; 27                                                                           ;
-;     -- arithmetic mode                      ; 20                                                                           ;
+;     -- normal mode                          ; 273                                                                          ;
+;     -- arithmetic mode                      ; 243                                                                          ;
 ;                                             ;                                                                              ;
-; Total registers                             ; 36                                                                           ;
-;     -- Dedicated logic registers            ; 36                                                                           ;
+; Total registers                             ; 92                                                                           ;
+;     -- Dedicated logic registers            ; 92                                                                           ;
 ;     -- I/O registers                        ; 0                                                                            ;
 ;                                             ;                                                                              ;
-; I/O pins                                    ; 16                                                                           ;
+; I/O pins                                    ; 49                                                                           ;
+; Total memory bits                           ; 180224                                                                       ;
 ;                                             ;                                                                              ;
 ; Embedded Multiplier 9-bit elements          ; 0                                                                            ;
 ;                                             ;                                                                              ;
 ; Total PLLs                                  ; 1                                                                            ;
 ;     -- PLLs                                 ; 1                                                                            ;
 ;                                             ;                                                                              ;
-; Maximum fan-out node                        ; PLLL:C|PLLL_altpll_0:altpll_0|PLLL_altpll_0_altpll_ft22:sd1|wire_pll7_clk[0] ;
-; Maximum fan-out                             ; 37                                                                           ;
-; Total fan-out                               ; 269                                                                          ;
-; Average fan-out                             ; 2.32                                                                         ;
+; Maximum fan-out node                        ; PLLL:C|PLLL_altpll_0:altpll_0|PLLL_altpll_0_altpll_2q22:sd1|wire_pll7_clk[0] ;
+; Maximum fan-out                             ; 115                                                                          ;
+; Total fan-out                               ; 2109                                                                         ;
+; Average fan-out                             ; 2.89                                                                         ;
 +---------------------------------------------+------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                           ;
-+------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------+---------------------------+--------------+
-; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                ; Entity Name               ; Library Name ;
-+------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------+---------------------------+--------------+
-; |PRACA                                   ; 47 (0)              ; 36 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 16   ; 0            ; 0          ; |PRACA                                                             ; PRACA                     ; work         ;
-;    |PLLL:C|                              ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRACA|PLLL:C                                                      ; PLLL                      ; PLLL         ;
-;       |PLLL_altpll_0:altpll_0|           ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRACA|PLLL:C|PLLL_altpll_0:altpll_0                               ; PLLL_altpll_0             ; PLLL         ;
-;          |PLLL_altpll_0_altpll_ft22:sd1| ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRACA|PLLL:C|PLLL_altpll_0:altpll_0|PLLL_altpll_0_altpll_ft22:sd1 ; PLLL_altpll_0_altpll_ft22 ; PLLL         ;
-;    |SYNC:C1|                             ; 47 (47)             ; 36 (36)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRACA|SYNC:C1                                                     ; SYNC                      ; work         ;
-+------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------+---------------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                          ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                              ; Entity Name               ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
+; |PRACA                                    ; 516 (82)            ; 92 (26)                   ; 180224      ; 0          ; 0            ; 0       ; 0         ; 49   ; 0            ; 0          ; |PRACA                                                                                                           ; PRACA                     ; work         ;
+;    |PLLL:C|                               ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRACA|PLLL:C                                                                                                    ; PLLL                      ; PLLL         ;
+;       |PLLL_altpll_0:altpll_0|            ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRACA|PLLL:C|PLLL_altpll_0:altpll_0                                                                             ; PLLL_altpll_0             ; PLLL         ;
+;          |PLLL_altpll_0_altpll_2q22:sd1|  ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRACA|PLLL:C|PLLL_altpll_0:altpll_0|PLLL_altpll_0_altpll_2q22:sd1                                               ; PLLL_altpll_0_altpll_2q22 ; PLLL         ;
+;    |monit1:C1|                            ; 173 (173)           ; 44 (44)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRACA|monit1:C1                                                                                                 ; monit1                    ; work         ;
+;    |monit2:C2|                            ; 209 (72)            ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRACA|monit2:C2                                                                                                 ; monit2                    ; work         ;
+;       |lpm_divide:Div0|                   ; 78 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRACA|monit2:C2|lpm_divide:Div0                                                                                 ; lpm_divide                ; work         ;
+;          |lpm_divide_ktl:auto_generated|  ; 78 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRACA|monit2:C2|lpm_divide:Div0|lpm_divide_ktl:auto_generated                                                   ; lpm_divide_ktl            ; work         ;
+;             |sign_div_unsign_mlh:divider| ; 78 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRACA|monit2:C2|lpm_divide:Div0|lpm_divide_ktl:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh       ; work         ;
+;                |alt_u_div_mhe:divider|    ; 78 (78)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRACA|monit2:C2|lpm_divide:Div0|lpm_divide_ktl:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_mhe:divider ; alt_u_div_mhe             ; work         ;
+;       |lpm_divide:Div1|                   ; 59 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRACA|monit2:C2|lpm_divide:Div1                                                                                 ; lpm_divide                ; work         ;
+;          |lpm_divide_ltl:auto_generated|  ; 59 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRACA|monit2:C2|lpm_divide:Div1|lpm_divide_ltl:auto_generated                                                   ; lpm_divide_ltl            ; work         ;
+;             |sign_div_unsign_nlh:divider| ; 59 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRACA|monit2:C2|lpm_divide:Div1|lpm_divide_ltl:auto_generated|sign_div_unsign_nlh:divider                       ; sign_div_unsign_nlh       ; work         ;
+;                |alt_u_div_ohe:divider|    ; 59 (59)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRACA|monit2:C2|lpm_divide:Div1|lpm_divide_ltl:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_ohe:divider ; alt_u_div_ohe             ; work         ;
+;    |monit3:C3|                            ; 44 (44)             ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRACA|monit3:C3                                                                                                 ; monit3                    ; work         ;
+;    |monit4:C4|                            ; 5 (5)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRACA|monit4:C4                                                                                                 ; monit4                    ; work         ;
+;    |rom2:c0|                              ; 3 (0)               ; 2 (0)                     ; 180224      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRACA|rom2:c0                                                                                                   ; rom2                      ; work         ;
+;       |altsyncram:altsyncram_component|   ; 3 (0)               ; 2 (0)                     ; 180224      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRACA|rom2:c0|altsyncram:altsyncram_component                                                                   ; altsyncram                ; work         ;
+;          |altsyncram_vlt3:auto_generated| ; 3 (0)               ; 2 (2)                     ; 180224      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRACA|rom2:c0|altsyncram:altsyncram_component|altsyncram_vlt3:auto_generated                                    ; altsyncram_vlt3           ; work         ;
+;             |mux_43b:mux2|                ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRACA|rom2:c0|altsyncram:altsyncram_component|altsyncram_vlt3:auto_generated|mux_43b:mux2                       ; mux_43b                   ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                       ;
++-----------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+-------------------------------------------------+
+; Name                                                                              ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF                                             ;
++-----------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+-------------------------------------------------+
+; rom2:c0|altsyncram:altsyncram_component|altsyncram_vlt3:auto_generated|ALTSYNCRAM ; M9K  ; ROM  ; 16384        ; 12           ; --           ; --           ; 196608 ; ../../../Users/Marcin/Documents/MATLAB/logo.mif ;
++-----------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+-------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------+
@@ -240,7 +306,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+--------------------------------------+-----------------+
 ; N/A    ; Qsys         ; 17.0    ; N/A          ; N/A          ; |PRACA|PLLL:C                        ; PLLL.qsys       ;
 ; Altera ; altpll       ; 17.0    ; N/A          ; N/A          ; |PRACA|PLLL:C|PLLL_altpll_0:altpll_0 ; PLLL.qsys       ;
+; Altera ; ROM: 1-PORT  ; 17.0    ; N/A          ; N/A          ; |PRACA|rom2:c0                       ; rom2.vhd        ;
 +--------+--------------+---------+--------------+--------------+--------------------------------------+-----------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; POSX[9]                                             ; Equal0              ; yes                    ;
+; POSX[8]                                             ; Equal0              ; yes                    ;
+; POSX[7]                                             ; Equal0              ; yes                    ;
+; POSX[6]                                             ; Equal0              ; yes                    ;
+; POSX[5]                                             ; Equal0              ; yes                    ;
+; POSX[4]                                             ; Equal0              ; yes                    ;
+; POSX[2]                                             ; Equal0              ; yes                    ;
+; POSX[3]                                             ; Equal0              ; yes                    ;
+; POSX[1]                                             ; Equal0              ; yes                    ;
+; POSY[10]                                            ; Equal0              ; yes                    ;
+; POSY[9]                                             ; Equal0              ; yes                    ;
+; POSY[8]                                             ; Equal0              ; yes                    ;
+; POSY[7]                                             ; Equal0              ; yes                    ;
+; POSY[6]                                             ; Equal0              ; yes                    ;
+; POSY[5]                                             ; Equal0              ; yes                    ;
+; POSY[4]                                             ; Equal0              ; yes                    ;
+; POSY[3]                                             ; Equal0              ; yes                    ;
+; POSY[2]                                             ; Equal0              ; yes                    ;
+; POSY[1]                                             ; Equal0              ; yes                    ;
+; Number of user-specified and inferred latches = 19  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +-----------------------------------------------------------------------------------+
@@ -249,7 +345,77 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Register name                            ; Reason for Removal                     ;
 +------------------------------------------+----------------------------------------+
 ; PLLL:C|PLLL_altpll_0:altpll_0|prev_reset ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 1    ;                                        ;
+; monit3:C3|R3[0]                          ; Merged with monit2:C2|R2[0]            ;
+; monit4:C4|R4[0]                          ; Merged with monit2:C2|R2[0]            ;
+; monit3:C3|R3[1]                          ; Merged with monit2:C2|R2[1]            ;
+; monit4:C4|R4[1]                          ; Merged with monit2:C2|R2[1]            ;
+; monit3:C3|R3[2]                          ; Merged with monit2:C2|R2[2]            ;
+; monit4:C4|R4[2]                          ; Merged with monit2:C2|R2[2]            ;
+; monit3:C3|b3[0]                          ; Merged with monit2:C2|B2[0]            ;
+; monit4:C4|b4[0]                          ; Merged with monit2:C2|B2[0]            ;
+; monit3:C3|b3[1]                          ; Merged with monit2:C2|B2[1]            ;
+; monit4:C4|b4[1]                          ; Merged with monit2:C2|B2[1]            ;
+; monit2:C2|HPOS[9]                        ; Merged with monit1:C1|HPOS[9]          ;
+; monit3:C3|HPOS[9]                        ; Merged with monit1:C1|HPOS[9]          ;
+; monit4:C4|HPOS[9]                        ; Merged with monit1:C1|HPOS[9]          ;
+; monit2:C2|HPOS[8]                        ; Merged with monit1:C1|HPOS[8]          ;
+; monit3:C3|HPOS[8]                        ; Merged with monit1:C1|HPOS[8]          ;
+; monit4:C4|HPOS[8]                        ; Merged with monit1:C1|HPOS[8]          ;
+; monit2:C2|HPOS[7]                        ; Merged with monit1:C1|HPOS[7]          ;
+; monit3:C3|HPOS[7]                        ; Merged with monit1:C1|HPOS[7]          ;
+; monit4:C4|HPOS[7]                        ; Merged with monit1:C1|HPOS[7]          ;
+; monit2:C2|HPOS[6]                        ; Merged with monit1:C1|HPOS[6]          ;
+; monit3:C3|HPOS[6]                        ; Merged with monit1:C1|HPOS[6]          ;
+; monit4:C4|HPOS[6]                        ; Merged with monit1:C1|HPOS[6]          ;
+; monit2:C2|HPOS[5]                        ; Merged with monit1:C1|HPOS[5]          ;
+; monit3:C3|HPOS[5]                        ; Merged with monit1:C1|HPOS[5]          ;
+; monit4:C4|HPOS[5]                        ; Merged with monit1:C1|HPOS[5]          ;
+; monit2:C2|HPOS[4]                        ; Merged with monit1:C1|HPOS[4]          ;
+; monit3:C3|HPOS[4]                        ; Merged with monit1:C1|HPOS[4]          ;
+; monit4:C4|HPOS[4]                        ; Merged with monit1:C1|HPOS[4]          ;
+; monit2:C2|HPOS[3]                        ; Merged with monit1:C1|HPOS[3]          ;
+; monit3:C3|HPOS[3]                        ; Merged with monit1:C1|HPOS[3]          ;
+; monit4:C4|HPOS[3]                        ; Merged with monit1:C1|HPOS[3]          ;
+; monit2:C2|HPOS[2]                        ; Merged with monit1:C1|HPOS[2]          ;
+; monit3:C3|HPOS[2]                        ; Merged with monit1:C1|HPOS[2]          ;
+; monit4:C4|HPOS[2]                        ; Merged with monit1:C1|HPOS[2]          ;
+; monit2:C2|HPOS[1]                        ; Merged with monit1:C1|HPOS[1]          ;
+; monit3:C3|HPOS[1]                        ; Merged with monit1:C1|HPOS[1]          ;
+; monit4:C4|HPOS[1]                        ; Merged with monit1:C1|HPOS[1]          ;
+; monit2:C2|HPOS[0]                        ; Merged with monit1:C1|HPOS[0]          ;
+; monit3:C3|HPOS[0]                        ; Merged with monit1:C1|HPOS[0]          ;
+; monit4:C4|HPOS[0]                        ; Merged with monit1:C1|HPOS[0]          ;
+; monit2:C2|VPOS[9]                        ; Merged with monit1:C1|VPOS[9]          ;
+; monit3:C3|VPOS[9]                        ; Merged with monit1:C1|VPOS[9]          ;
+; monit4:C4|VPOS[9]                        ; Merged with monit1:C1|VPOS[9]          ;
+; monit2:C2|VPOS[8]                        ; Merged with monit1:C1|VPOS[8]          ;
+; monit3:C3|VPOS[8]                        ; Merged with monit1:C1|VPOS[8]          ;
+; monit4:C4|VPOS[8]                        ; Merged with monit1:C1|VPOS[8]          ;
+; monit2:C2|VPOS[7]                        ; Merged with monit1:C1|VPOS[7]          ;
+; monit3:C3|VPOS[7]                        ; Merged with monit1:C1|VPOS[7]          ;
+; monit4:C4|VPOS[7]                        ; Merged with monit1:C1|VPOS[7]          ;
+; monit2:C2|VPOS[6]                        ; Merged with monit1:C1|VPOS[6]          ;
+; monit3:C3|VPOS[6]                        ; Merged with monit1:C1|VPOS[6]          ;
+; monit4:C4|VPOS[6]                        ; Merged with monit1:C1|VPOS[6]          ;
+; monit2:C2|VPOS[5]                        ; Merged with monit1:C1|VPOS[5]          ;
+; monit3:C3|VPOS[5]                        ; Merged with monit1:C1|VPOS[5]          ;
+; monit4:C4|VPOS[5]                        ; Merged with monit1:C1|VPOS[5]          ;
+; monit2:C2|VPOS[4]                        ; Merged with monit1:C1|VPOS[4]          ;
+; monit3:C3|VPOS[4]                        ; Merged with monit1:C1|VPOS[4]          ;
+; monit4:C4|VPOS[4]                        ; Merged with monit1:C1|VPOS[4]          ;
+; monit2:C2|VPOS[3]                        ; Merged with monit1:C1|VPOS[3]          ;
+; monit3:C3|VPOS[3]                        ; Merged with monit1:C1|VPOS[3]          ;
+; monit4:C4|VPOS[3]                        ; Merged with monit1:C1|VPOS[3]          ;
+; monit2:C2|VPOS[2]                        ; Merged with monit1:C1|VPOS[2]          ;
+; monit3:C3|VPOS[2]                        ; Merged with monit1:C1|VPOS[2]          ;
+; monit4:C4|VPOS[2]                        ; Merged with monit1:C1|VPOS[2]          ;
+; monit2:C2|VPOS[1]                        ; Merged with monit1:C1|VPOS[1]          ;
+; monit3:C3|VPOS[1]                        ; Merged with monit1:C1|VPOS[1]          ;
+; monit4:C4|VPOS[1]                        ; Merged with monit1:C1|VPOS[1]          ;
+; monit2:C2|VPOS[0]                        ; Merged with monit1:C1|VPOS[0]          ;
+; monit3:C3|VPOS[0]                        ; Merged with monit1:C1|VPOS[0]          ;
+; monit4:C4|VPOS[0]                        ; Merged with monit1:C1|VPOS[0]          ;
+; Total Number of Removed Registers = 71   ;                                        ;
 +------------------------------------------+----------------------------------------+
 
 
@@ -258,14 +424,28 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 36    ;
-; Number of registers using Synchronous Clear  ; 22    ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Total registers                              ; 92    ;
+; Number of registers using Synchronous Clear  ; 54    ;
+; Number of registers using Synchronous Load   ; 8     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 11    ;
+; Number of registers using Clock Enable       ; 24    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |PRACA|monit2:C2|G2[0]     ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |PRACA|monit1:C1|g[0]      ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |PRACA|monit2:C2|R2[0]     ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |PRACA|monit1:C1|b[0]      ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |PRACA|monit1:C1|R[2]      ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |PRACA|monit2:C2|B2[1]     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
 +------------------------------------------------------+
@@ -286,8 +466,192 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------+-------+------+---------------------------------------------------------------------------+
 
 
++-----------------------------------------------------------------------------------------------+
+; Source assignments for rom2:c0|altsyncram:altsyncram_component|altsyncram_vlt3:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------+
+; Assignment                      ; Value              ; From ; To                              ;
++---------------------------------+--------------------+------+---------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                               ;
++---------------------------------+--------------------+------+---------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rom2:c0|altsyncram:altsyncram_component                  ;
++------------------------------------+-------------------------------------------------+----------------+
+; Parameter Name                     ; Value                                           ; Type           ;
++------------------------------------+-------------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                               ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                              ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                             ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                              ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                             ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                               ; Untyped        ;
+; OPERATION_MODE                     ; ROM                                             ; Untyped        ;
+; WIDTH_A                            ; 12                                              ; Signed Integer ;
+; WIDTHAD_A                          ; 14                                              ; Signed Integer ;
+; NUMWORDS_A                         ; 16384                                           ; Signed Integer ;
+; OUTDATA_REG_A                      ; CLOCK0                                          ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                            ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                            ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                            ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                            ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                            ; Untyped        ;
+; WIDTH_B                            ; 1                                               ; Signed Integer ;
+; WIDTHAD_B                          ; 1                                               ; Signed Integer ;
+; NUMWORDS_B                         ; 0                                               ; Signed Integer ;
+; INDATA_REG_B                       ; CLOCK1                                          ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                          ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                          ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1                                          ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                    ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                          ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                            ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                            ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                            ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                            ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                            ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                            ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                               ; Signed Integer ;
+; WIDTH_BYTEENA_B                    ; 1                                               ; Signed Integer ;
+; RAM_BLOCK_TYPE                     ; M9K                                             ; Untyped        ;
+; BYTE_SIZE                          ; 8                                               ; Signed Integer ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                       ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                            ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                            ; Untyped        ;
+; INIT_FILE                          ; ../../../Users/Marcin/Documents/MATLAB/logo.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                          ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                               ; Signed Integer ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS                                          ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                          ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                                          ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                          ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                 ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                 ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                           ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                           ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                               ; Signed Integer ;
+; DEVICE_FAMILY                      ; MAX 10                                          ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_vlt3                                 ; Untyped        ;
++------------------------------------+-------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: monit2:C2|lpm_divide:Div0 ;
++------------------------+----------------+----------------------------------+
+; Parameter Name         ; Value          ; Type                             ;
++------------------------+----------------+----------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                          ;
+; LPM_WIDTHD             ; 6              ; Untyped                          ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                          ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                          ;
+; LPM_PIPELINE           ; 0              ; Untyped                          ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                          ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                          ;
+; CBXI_PARAMETER         ; lpm_divide_ktl ; Untyped                          ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                          ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                          ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                     ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                   ;
++------------------------+----------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: monit2:C2|lpm_divide:Div1 ;
++------------------------+----------------+----------------------------------+
+; Parameter Name         ; Value          ; Type                             ;
++------------------------+----------------+----------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                          ;
+; LPM_WIDTHD             ; 7              ; Untyped                          ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                          ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                          ;
+; LPM_PIPELINE           ; 0              ; Untyped                          ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                          ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                          ;
+; CBXI_PARAMETER         ; lpm_divide_ltl ; Untyped                          ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                          ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                          ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                     ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                   ;
++------------------------+----------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                    ;
++-------------------------------------------+-----------------------------------------+
+; Name                                      ; Value                                   ;
++-------------------------------------------+-----------------------------------------+
+; Number of entity instances                ; 1                                       ;
+; Entity Instance                           ; rom2:c0|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                     ;
+;     -- WIDTH_A                            ; 12                                      ;
+;     -- NUMWORDS_A                         ; 16384                                   ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                  ;
+;     -- WIDTH_B                            ; 1                                       ;
+;     -- NUMWORDS_B                         ; 0                                       ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                  ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                            ;
+;     -- RAM_BLOCK_TYPE                     ; M9K                                     ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                               ;
++-------------------------------------------+-----------------------------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "monit4:C4"          ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; posx[31..10] ; Input ; Info     ; Stuck at GND ;
+; posx[0]      ; Input ; Info     ; Stuck at GND ;
+; posy[31..11] ; Input ; Info     ; Stuck at GND ;
+; posy[0]      ; Input ; Info     ; Stuck at GND ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "monit3:C3"          ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; posx[31..10] ; Input ; Info     ; Stuck at GND ;
+; posx[0]      ; Input ; Info     ; Stuck at GND ;
+; posy[31..11] ; Input ; Info     ; Stuck at GND ;
+; posy[0]      ; Input ; Info     ; Stuck at GND ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "monit2:C2"          ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; posx[31..10] ; Input ; Info     ; Stuck at GND ;
+; posx[0]      ; Input ; Info     ; Stuck at GND ;
+; posy[31..11] ; Input ; Info     ; Stuck at GND ;
+; posy[0]      ; Input ; Info     ; Stuck at GND ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "monit1:C1"          ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; posx[31..10] ; Input ; Info     ; Stuck at GND ;
+; posx[0]      ; Input ; Info     ; Stuck at GND ;
+; posy[31..11] ; Input ; Info     ; Stuck at GND ;
+; posy[0]      ; Input ; Info     ; Stuck at GND ;
++--------------+-------+----------+--------------+
+
+
 +-----------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "PLLL:C|PLLL_altpll_0:altpll_0|PLLL_altpll_0_altpll_ft22:sd1" ;
+; Port Connectivity Checks: "PLLL:C|PLLL_altpll_0:altpll_0|PLLL_altpll_0_altpll_2q22:sd1" ;
 +----------+-------+----------+-----------------------------------------------------------+
 ; Port     ; Type  ; Severity ; Details                                                   ;
 +----------+-------+----------+-----------------------------------------------------------+
@@ -338,23 +702,28 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 16                          ;
-; cycloneiii_ff         ; 36                          ;
-;     ENA SCLR          ; 11                          ;
-;     SCLR              ; 11                          ;
-;     plain             ; 14                          ;
-; cycloneiii_lcell_comb ; 47                          ;
-;     arith             ; 20                          ;
-;         2 data inputs ; 20                          ;
-;     normal            ; 27                          ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 3                           ;
-;         3 data inputs ; 4                           ;
-;         4 data inputs ; 18                          ;
+; boundary_port         ; 49                          ;
+; cycloneiii_ff         ; 92                          ;
+;     ENA               ; 14                          ;
+;     ENA SCLR          ; 10                          ;
+;     SCLR              ; 36                          ;
+;     SCLR SLD          ; 8                           ;
+;     plain             ; 24                          ;
+; cycloneiii_lcell_comb ; 516                         ;
+;     arith             ; 243                         ;
+;         2 data inputs ; 115                         ;
+;         3 data inputs ; 128                         ;
+;     normal            ; 273                         ;
+;         0 data inputs ; 12                          ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 97                          ;
+;         3 data inputs ; 27                          ;
+;         4 data inputs ; 128                         ;
 ; cycloneiii_pll        ; 1                           ;
+; cycloneiii_ram_block  ; 22                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 2.45                        ;
+; Max LUT depth         ; 12.40                       ;
+; Average LUT depth     ; 5.55                        ;
 +-----------------------+-----------------------------+
 
 
@@ -363,7 +732,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -373,45 +742,206 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Dec 12 01:43:17 2017
+    Info: Processing started: Wed Jan 24 03:09:43 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off praca -c praca
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file unsaved/synthesis/unsaved.v
+    Info (12023): Found entity 1: unsaved File: C:/intelFPGA_lite/praca/unsaved/synthesis/unsaved.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file unsaved/synthesis/submodules/altera_reset_controller.v
+    Info (12023): Found entity 1: altera_reset_controller File: C:/intelFPGA_lite/praca/unsaved/synthesis/submodules/altera_reset_controller.v Line: 42
+Info (12021): Found 1 design units, including 1 entities, in source file unsaved/synthesis/submodules/altera_reset_synchronizer.v
+    Info (12023): Found entity 1: altera_reset_synchronizer File: C:/intelFPGA_lite/praca/unsaved/synthesis/submodules/altera_reset_synchronizer.v Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file unsaved/synthesis/submodules/altera_dual_boot.v
+    Info (12023): Found entity 1: altera_dual_boot File: C:/intelFPGA_lite/praca/unsaved/synthesis/submodules/altera_dual_boot.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file unsaved/synthesis/submodules/rtl/alt_dual_boot_avmm.v
+    Info (12023): Found entity 1: alt_dual_boot_avmm File: C:/intelFPGA_lite/praca/unsaved/synthesis/submodules/rtl/alt_dual_boot_avmm.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file unsaved/synthesis/submodules/rtl/alt_dual_boot.v
+    Info (12023): Found entity 1: alt_dual_boot File: C:/intelFPGA_lite/praca/unsaved/synthesis/submodules/rtl/alt_dual_boot.v Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file plll/synthesis/plll.v
     Info (12023): Found entity 1: PLLL File: C:/intelFPGA_lite/praca/PLLL/synthesis/PLLL.v Line: 6
 Info (12021): Found 4 design units, including 4 entities, in source file plll/synthesis/submodules/plll_altpll_0.v
     Info (12023): Found entity 1: PLLL_altpll_0_dffpipe_l2c File: C:/intelFPGA_lite/praca/PLLL/synthesis/submodules/PLLL_altpll_0.v Line: 38
     Info (12023): Found entity 2: PLLL_altpll_0_stdsync_sv6 File: C:/intelFPGA_lite/praca/PLLL/synthesis/submodules/PLLL_altpll_0.v Line: 99
-    Info (12023): Found entity 3: PLLL_altpll_0_altpll_ft22 File: C:/intelFPGA_lite/praca/PLLL/synthesis/submodules/PLLL_altpll_0.v Line: 131
+    Info (12023): Found entity 3: PLLL_altpll_0_altpll_2q22 File: C:/intelFPGA_lite/praca/PLLL/synthesis/submodules/PLLL_altpll_0.v Line: 131
     Info (12023): Found entity 4: PLLL_altpll_0 File: C:/intelFPGA_lite/praca/PLLL/synthesis/submodules/PLLL_altpll_0.v Line: 214
 Info (12021): Found 2 design units, including 1 entities, in source file praca.vhd
-    Info (12022): Found design unit 1: PRACA-MAIN File: C:/intelFPGA_lite/praca/praca.vhd Line: 17
-    Info (12023): Found entity 1: PRACA File: C:/intelFPGA_lite/praca/praca.vhd Line: 6
+    Info (12022): Found design unit 1: PRACA-MAIN File: C:/intelFPGA_lite/praca/praca.vhd Line: 22
+    Info (12023): Found entity 1: PRACA File: C:/intelFPGA_lite/praca/praca.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file vhdl2.vhd
-    Info (12022): Found design unit 1: SYNC-MAIN File: C:/intelFPGA_lite/praca/Vhdl2.vhd Line: 13
-    Info (12023): Found entity 1: SYNC File: C:/intelFPGA_lite/praca/Vhdl2.vhd Line: 5
+    Info (12022): Found design unit 1: monit1-MAIN File: C:/intelFPGA_lite/praca/Vhdl2.vhd Line: 21
+    Info (12023): Found entity 1: monit1 File: C:/intelFPGA_lite/praca/Vhdl2.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl1.vhd
+    Info (12022): Found design unit 1: monit2-MAIN File: C:/intelFPGA_lite/praca/Vhdl1.vhd Line: 16
+    Info (12023): Found entity 1: monit2 File: C:/intelFPGA_lite/praca/Vhdl1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file monit3.vhd
+    Info (12022): Found design unit 1: monit3-MAIN File: C:/intelFPGA_lite/praca/monit3.vhd Line: 16
+    Info (12023): Found entity 1: monit3 File: C:/intelFPGA_lite/praca/monit3.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file monit4.vhd
+    Info (12022): Found design unit 1: monit4-MAIN File: C:/intelFPGA_lite/praca/monit4.vhd Line: 16
+    Info (12023): Found entity 1: monit4 File: C:/intelFPGA_lite/praca/monit4.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file rom.vhd
+    Info (12022): Found design unit 1: rom-main File: C:/intelFPGA_lite/praca/rom.vhd Line: 12
+    Info (12023): Found entity 1: rom File: C:/intelFPGA_lite/praca/rom.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file rom2.vhd
+    Info (12022): Found design unit 1: rom2-SYN File: C:/intelFPGA_lite/praca/rom2.vhd Line: 53
+    Info (12023): Found entity 1: rom2 File: C:/intelFPGA_lite/praca/rom2.vhd Line: 43
 Info (12127): Elaborating entity "praca" for the top level hierarchy
-Warning (10540): VHDL Signal Declaration warning at praca.vhd(18): used explicit default value for signal "RESET" because signal was never assigned a value File: C:/intelFPGA_lite/praca/praca.vhd Line: 18
-Info (12128): Elaborating entity "PLLL" for hierarchy "PLLL:C" File: C:/intelFPGA_lite/praca/praca.vhd Line: 45
+Warning (10540): VHDL Signal Declaration warning at praca.vhd(23): used explicit default value for signal "RESET" because signal was never assigned a value File: C:/intelFPGA_lite/praca/praca.vhd Line: 23
+Warning (10492): VHDL Process Statement warning at praca.vhd(128): signal "licznik" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/praca/praca.vhd Line: 128
+Warning (10492): VHDL Process Statement warning at praca.vhd(130): signal "POSX" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/praca/praca.vhd Line: 130
+Warning (10492): VHDL Process Statement warning at praca.vhd(131): signal "POSY" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/praca/praca.vhd Line: 131
+Warning (10492): VHDL Process Statement warning at praca.vhd(134): signal "POSX" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/praca/praca.vhd Line: 134
+Warning (10492): VHDL Process Statement warning at praca.vhd(137): signal "POSY" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/praca/praca.vhd Line: 137
+Warning (10631): VHDL Process Statement warning at praca.vhd(113): inferring latch(es) for signal or variable "POSX", which holds its previous value in one or more paths through the process File: C:/intelFPGA_lite/praca/praca.vhd Line: 113
+Warning (10631): VHDL Process Statement warning at praca.vhd(113): inferring latch(es) for signal or variable "POSY", which holds its previous value in one or more paths through the process File: C:/intelFPGA_lite/praca/praca.vhd Line: 113
+Info (10041): Inferred latch for "POSY[0]" at praca.vhd(113) File: C:/intelFPGA_lite/praca/praca.vhd Line: 113
+Info (10041): Inferred latch for "POSY[1]" at praca.vhd(113) File: C:/intelFPGA_lite/praca/praca.vhd Line: 113
+Info (10041): Inferred latch for "POSY[2]" at praca.vhd(113) File: C:/intelFPGA_lite/praca/praca.vhd Line: 113
+Info (10041): Inferred latch for "POSY[3]" at praca.vhd(113) File: C:/intelFPGA_lite/praca/praca.vhd Line: 113
+Info (10041): Inferred latch for "POSY[4]" at praca.vhd(113) File: C:/intelFPGA_lite/praca/praca.vhd Line: 113
+Info (10041): Inferred latch for "POSY[5]" at praca.vhd(113) File: C:/intelFPGA_lite/praca/praca.vhd Line: 113
+Info (10041): Inferred latch for "POSY[6]" at praca.vhd(113) File: C:/intelFPGA_lite/praca/praca.vhd Line: 113
+Info (10041): Inferred latch for "POSY[7]" at praca.vhd(113) File: C:/intelFPGA_lite/praca/praca.vhd Line: 113
+Info (10041): Inferred latch for "POSY[8]" at praca.vhd(113) File: C:/intelFPGA_lite/praca/praca.vhd Line: 113
+Info (10041): Inferred latch for "POSY[9]" at praca.vhd(113) File: C:/intelFPGA_lite/praca/praca.vhd Line: 113
+Info (10041): Inferred latch for "POSY[10]" at praca.vhd(113) File: C:/intelFPGA_lite/praca/praca.vhd Line: 113
+Info (10041): Inferred latch for "POSX[0]" at praca.vhd(113) File: C:/intelFPGA_lite/praca/praca.vhd Line: 113
+Info (10041): Inferred latch for "POSX[1]" at praca.vhd(113) File: C:/intelFPGA_lite/praca/praca.vhd Line: 113
+Info (10041): Inferred latch for "POSX[2]" at praca.vhd(113) File: C:/intelFPGA_lite/praca/praca.vhd Line: 113
+Info (10041): Inferred latch for "POSX[3]" at praca.vhd(113) File: C:/intelFPGA_lite/praca/praca.vhd Line: 113
+Info (10041): Inferred latch for "POSX[4]" at praca.vhd(113) File: C:/intelFPGA_lite/praca/praca.vhd Line: 113
+Info (10041): Inferred latch for "POSX[5]" at praca.vhd(113) File: C:/intelFPGA_lite/praca/praca.vhd Line: 113
+Info (10041): Inferred latch for "POSX[6]" at praca.vhd(113) File: C:/intelFPGA_lite/praca/praca.vhd Line: 113
+Info (10041): Inferred latch for "POSX[7]" at praca.vhd(113) File: C:/intelFPGA_lite/praca/praca.vhd Line: 113
+Info (10041): Inferred latch for "POSX[8]" at praca.vhd(113) File: C:/intelFPGA_lite/praca/praca.vhd Line: 113
+Info (10041): Inferred latch for "POSX[9]" at praca.vhd(113) File: C:/intelFPGA_lite/praca/praca.vhd Line: 113
+Info (12128): Elaborating entity "PLLL" for hierarchy "PLLL:C" File: C:/intelFPGA_lite/praca/praca.vhd Line: 142
 Info (12128): Elaborating entity "PLLL_altpll_0" for hierarchy "PLLL:C|PLLL_altpll_0:altpll_0" File: C:/intelFPGA_lite/praca/PLLL/synthesis/PLLL.v Line: 37
 Info (12128): Elaborating entity "PLLL_altpll_0_stdsync_sv6" for hierarchy "PLLL:C|PLLL_altpll_0:altpll_0|PLLL_altpll_0_stdsync_sv6:stdsync2" File: C:/intelFPGA_lite/praca/PLLL/synthesis/submodules/PLLL_altpll_0.v Line: 285
 Info (12128): Elaborating entity "PLLL_altpll_0_dffpipe_l2c" for hierarchy "PLLL:C|PLLL_altpll_0:altpll_0|PLLL_altpll_0_stdsync_sv6:stdsync2|PLLL_altpll_0_dffpipe_l2c:dffpipe3" File: C:/intelFPGA_lite/praca/PLLL/synthesis/submodules/PLLL_altpll_0.v Line: 117
-Info (12128): Elaborating entity "PLLL_altpll_0_altpll_ft22" for hierarchy "PLLL:C|PLLL_altpll_0:altpll_0|PLLL_altpll_0_altpll_ft22:sd1" File: C:/intelFPGA_lite/praca/PLLL/synthesis/submodules/PLLL_altpll_0.v Line: 291
-Info (12128): Elaborating entity "SYNC" for hierarchy "SYNC:C1" File: C:/intelFPGA_lite/praca/praca.vhd Line: 46
+Info (12128): Elaborating entity "PLLL_altpll_0_altpll_2q22" for hierarchy "PLLL:C|PLLL_altpll_0:altpll_0|PLLL_altpll_0_altpll_2q22:sd1" File: C:/intelFPGA_lite/praca/PLLL/synthesis/submodules/PLLL_altpll_0.v Line: 291
+Info (12128): Elaborating entity "rom2" for hierarchy "rom2:c0" File: C:/intelFPGA_lite/praca/praca.vhd Line: 143
+Info (12128): Elaborating entity "altsyncram" for hierarchy "rom2:c0|altsyncram:altsyncram_component" File: C:/intelFPGA_lite/praca/rom2.vhd Line: 60
+Info (12130): Elaborated megafunction instantiation "rom2:c0|altsyncram:altsyncram_component" File: C:/intelFPGA_lite/praca/rom2.vhd Line: 60
+Info (12133): Instantiated megafunction "rom2:c0|altsyncram:altsyncram_component" with the following parameter: File: C:/intelFPGA_lite/praca/rom2.vhd Line: 60
+    Info (12134): Parameter "address_aclr_a" = "NONE"
+    Info (12134): Parameter "address_aclr_b" = "NONE"
+    Info (12134): Parameter "address_reg_b" = "CLOCK1"
+    Info (12134): Parameter "byte_size" = "8"
+    Info (12134): Parameter "byteena_aclr_a" = "UNUSED"
+    Info (12134): Parameter "byteena_aclr_b" = "NONE"
+    Info (12134): Parameter "byteena_reg_b" = "CLOCK1"
+    Info (12134): Parameter "clock_enable_core_a" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_core_b" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_input_b" = "NORMAL"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_b" = "NORMAL"
+    Info (12134): Parameter "intended_device_family" = "MAX 10"
+    Info (12134): Parameter "ecc_pipeline_stage_enabled" = "FALSE"
+    Info (12134): Parameter "enable_ecc" = "FALSE"
+    Info (12134): Parameter "implement_in_les" = "OFF"
+    Info (12134): Parameter "indata_aclr_a" = "UNUSED"
+    Info (12134): Parameter "indata_aclr_b" = "NONE"
+    Info (12134): Parameter "indata_reg_b" = "CLOCK1"
+    Info (12134): Parameter "init_file" = "../../../Users/Marcin/Documents/MATLAB/logo.mif"
+    Info (12134): Parameter "init_file_layout" = "PORT_A"
+    Info (12134): Parameter "maximum_depth" = "0"
+    Info (12134): Parameter "numwords_a" = "16384"
+    Info (12134): Parameter "numwords_b" = "0"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_aclr_b" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "outdata_reg_b" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "ram_block_type" = "M9K"
+    Info (12134): Parameter "rdcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "rdcontrol_reg_b" = "CLOCK1"
+    Info (12134): Parameter "read_during_write_mode_mixed_ports" = "DONT_CARE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "read_during_write_mode_port_b" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "stratixiv_m144k_allow_dual_clocks" = "ON"
+    Info (12134): Parameter "width_a" = "12"
+    Info (12134): Parameter "width_b" = "1"
+    Info (12134): Parameter "width_byteena_a" = "1"
+    Info (12134): Parameter "width_byteena_b" = "1"
+    Info (12134): Parameter "width_eccstatus" = "3"
+    Info (12134): Parameter "widthad_a" = "14"
+    Info (12134): Parameter "widthad_b" = "1"
+    Info (12134): Parameter "wrcontrol_aclr_a" = "UNUSED"
+    Info (12134): Parameter "wrcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_vlt3.tdf
+    Info (12023): Found entity 1: altsyncram_vlt3 File: C:/intelFPGA_lite/praca/db/altsyncram_vlt3.tdf Line: 32
+Info (12128): Elaborating entity "altsyncram_vlt3" for hierarchy "rom2:c0|altsyncram:altsyncram_component|altsyncram_vlt3:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_2j9.tdf
+    Info (12023): Found entity 1: decode_2j9 File: C:/intelFPGA_lite/praca/db/decode_2j9.tdf Line: 23
+Info (12128): Elaborating entity "decode_2j9" for hierarchy "rom2:c0|altsyncram:altsyncram_component|altsyncram_vlt3:auto_generated|decode_2j9:rden_decode" File: C:/intelFPGA_lite/praca/db/altsyncram_vlt3.tdf Line: 41
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_43b.tdf
+    Info (12023): Found entity 1: mux_43b File: C:/intelFPGA_lite/praca/db/mux_43b.tdf Line: 23
+Info (12128): Elaborating entity "mux_43b" for hierarchy "rom2:c0|altsyncram:altsyncram_component|altsyncram_vlt3:auto_generated|mux_43b:mux2" File: C:/intelFPGA_lite/praca/db/altsyncram_vlt3.tdf Line: 42
+Info (12128): Elaborating entity "monit1" for hierarchy "monit1:C1" File: C:/intelFPGA_lite/praca/praca.vhd Line: 144
+Warning (10036): Verilog HDL or VHDL warning at Vhdl2.vhd(24): object "x" assigned a value but never read File: C:/intelFPGA_lite/praca/Vhdl2.vhd Line: 24
+Warning (10036): Verilog HDL or VHDL warning at Vhdl2.vhd(28): object "xpix" assigned a value but never read File: C:/intelFPGA_lite/praca/Vhdl2.vhd Line: 28
+Warning (10036): Verilog HDL or VHDL warning at Vhdl2.vhd(28): object "ypix" assigned a value but never read File: C:/intelFPGA_lite/praca/Vhdl2.vhd Line: 28
+Info (12128): Elaborating entity "monit2" for hierarchy "monit2:C2" File: C:/intelFPGA_lite/praca/praca.vhd Line: 145
+Info (12128): Elaborating entity "monit3" for hierarchy "monit3:C3" File: C:/intelFPGA_lite/praca/praca.vhd Line: 146
+Info (12128): Elaborating entity "monit4" for hierarchy "monit4:C4" File: C:/intelFPGA_lite/praca/praca.vhd Line: 147
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "rom2:c0|altsyncram:altsyncram_component|altsyncram_vlt3:auto_generated|ram_block1a8" File: C:/intelFPGA_lite/praca/db/altsyncram_vlt3.tdf Line: 227
+        Warning (14320): Synthesized away node "rom2:c0|altsyncram:altsyncram_component|altsyncram_vlt3:auto_generated|ram_block1a20" File: C:/intelFPGA_lite/praca/db/altsyncram_vlt3.tdf Line: 503
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "monit2:C2|Div0" File: C:/intelFPGA_lite/praca/Vhdl1.vhd Line: 28
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "monit2:C2|Div1" File: C:/intelFPGA_lite/praca/Vhdl1.vhd Line: 36
+Info (12130): Elaborated megafunction instantiation "monit2:C2|lpm_divide:Div0" File: C:/intelFPGA_lite/praca/Vhdl1.vhd Line: 28
+Info (12133): Instantiated megafunction "monit2:C2|lpm_divide:Div0" with the following parameter: File: C:/intelFPGA_lite/praca/Vhdl1.vhd Line: 28
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "6"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ktl.tdf
+    Info (12023): Found entity 1: lpm_divide_ktl File: C:/intelFPGA_lite/praca/db/lpm_divide_ktl.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_mlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_mlh File: C:/intelFPGA_lite/praca/db/sign_div_unsign_mlh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_mhe.tdf
+    Info (12023): Found entity 1: alt_u_div_mhe File: C:/intelFPGA_lite/praca/db/alt_u_div_mhe.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
+    Info (12023): Found entity 1: add_sub_t3c File: C:/intelFPGA_lite/praca/db/add_sub_t3c.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
+    Info (12023): Found entity 1: add_sub_u3c File: C:/intelFPGA_lite/praca/db/add_sub_u3c.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "monit2:C2|lpm_divide:Div1" File: C:/intelFPGA_lite/praca/Vhdl1.vhd Line: 36
+Info (12133): Instantiated megafunction "monit2:C2|lpm_divide:Div1" with the following parameter: File: C:/intelFPGA_lite/praca/Vhdl1.vhd Line: 36
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ltl.tdf
+    Info (12023): Found entity 1: lpm_divide_ltl File: C:/intelFPGA_lite/praca/db/lpm_divide_ltl.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_nlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_nlh File: C:/intelFPGA_lite/praca/db/sign_div_unsign_nlh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ohe.tdf
+    Info (12023): Found entity 1: alt_u_div_ohe File: C:/intelFPGA_lite/praca/db/alt_u_div_ohe.tdf Line: 27
 Info (286030): Timing-Driven Synthesis is running
+Warning (20013): Ignored 14 assignments for entity "altera_dual_boot" -- entity does not exist in design
+Warning (20013): Ignored 35 assignments for entity "altera_reset_controller" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "unsaved" -- entity does not exist in design
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK_24[1]" File: C:/intelFPGA_lite/praca/praca.vhd Line: 8
-Info (21057): Implemented 76 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 14 output pins
-    Info (21061): Implemented 59 logic cells
+Info (21057): Implemented 600 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 40 output pins
+    Info (21061): Implemented 528 logic cells
+    Info (21064): Implemented 22 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 655 megabytes
-    Info: Processing ended: Tue Dec 12 01:43:34 2017
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:39
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 681 megabytes
+    Info: Processing ended: Wed Jan 24 03:10:14 2018
+    Info: Elapsed time: 00:00:31
+    Info: Total CPU time (on all processors): 00:00:49
 
 

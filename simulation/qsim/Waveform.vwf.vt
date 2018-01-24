@@ -1,0 +1,136 @@
+// Copyright (C) 2017  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Intel and sold by Intel or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "01/20/2018 14:51:59"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          PRACA
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module PRACA_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg CLOCK_24;
+reg [7:0] SW;
+// wires                                               
+wire [1:0] vga2_b;
+wire [2:0] vga2_g;
+wire VGA2_HS;
+wire [2:0] vga2_r;
+wire VGA2_VS;
+wire [1:0] vga3_b;
+wire [2:0] vga3_g;
+wire VGA3_HS;
+wire [2:0] vga3_r;
+wire VGA3_VS;
+wire [1:0] vga4_b;
+wire [2:0] vga4_g;
+wire VGA4_HS;
+wire [2:0] vga4_R;
+wire VGA4_VS;
+wire [1:0] vga_b;
+wire [2:0] vga_g;
+wire VGA_HS;
+wire [2:0] vga_r;
+wire VGA_VS;
+
+// assign statements (if any)                          
+PRACA i1 (
+// port map - connection between master ports and signals/registers   
+	.CLOCK_24(CLOCK_24),
+	.SW(SW),
+	.vga2_b(vga2_b),
+	.vga2_g(vga2_g),
+	.VGA2_HS(VGA2_HS),
+	.vga2_r(vga2_r),
+	.VGA2_VS(VGA2_VS),
+	.vga3_b(vga3_b),
+	.vga3_g(vga3_g),
+	.VGA3_HS(VGA3_HS),
+	.vga3_r(vga3_r),
+	.VGA3_VS(VGA3_VS),
+	.vga4_b(vga4_b),
+	.vga4_g(vga4_g),
+	.VGA4_HS(VGA4_HS),
+	.vga4_R(vga4_R),
+	.VGA4_VS(VGA4_VS),
+	.vga_b(vga_b),
+	.vga_g(vga_g),
+	.VGA_HS(VGA_HS),
+	.vga_r(vga_r),
+	.VGA_VS(VGA_VS)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+
+// CLOCK_24
+always
+begin
+	CLOCK_24 = 1'b0;
+	CLOCK_24 = #10000 1'b1;
+	#10000;
+end 
+// SW[ 7 ]
+initial
+begin
+	SW[7] = 1'b0;
+end 
+// SW[ 6 ]
+initial
+begin
+	SW[6] = 1'b0;
+end 
+// SW[ 5 ]
+initial
+begin
+	SW[5] = 1'b0;
+end 
+// SW[ 4 ]
+initial
+begin
+	SW[4] = 1'b0;
+end 
+// SW[ 3 ]
+initial
+begin
+	SW[3] = 1'b0;
+end 
+// SW[ 2 ]
+initial
+begin
+	SW[2] = 1'b0;
+end 
+// SW[ 1 ]
+initial
+begin
+	SW[1] = 1'b0;
+end 
+// SW[ 0 ]
+initial
+begin
+	SW[0] = 1'b0;
+end 
+endmodule
+

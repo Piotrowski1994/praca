@@ -1,0 +1,34 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\intelFPGA_lite\praca\PLLL.qsys --block-symbol-file --output-directory=C:\intelFPGA_lite\praca\PLLL --family="MAX 10" --part=10M50DAF484C7G
+Progress: Loading praca/PLLL.qsys
+Progress: Reading input file
+Progress: Adding altpll_0 [altpll 17.0]
+Progress: Parameterizing module altpll_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: PLLL.altpll_0: altpll_0.areset_conduit must be exported, or connected to a matching conduit.
+Warning: PLLL.altpll_0: altpll_0.locked_conduit must be exported, or connected to a matching conduit.
+Warning: PLLL.altpll_0: altpll_0.pll_slave must be connected to an Avalon-MM master
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\intelFPGA_lite\praca\PLLL.qsys --synthesis=VERILOG --output-directory=C:\intelFPGA_lite\praca\PLLL\synthesis --family="MAX 10" --part=10M50DAF484C7G
+Progress: Loading praca/PLLL.qsys
+Progress: Reading input file
+Progress: Adding altpll_0 [altpll 17.0]
+Progress: Parameterizing module altpll_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: PLLL.altpll_0: altpll_0.areset_conduit must be exported, or connected to a matching conduit.
+Warning: PLLL.altpll_0: altpll_0.locked_conduit must be exported, or connected to a matching conduit.
+Warning: PLLL.altpll_0: altpll_0.pll_slave must be connected to an Avalon-MM master
+Info: PLLL: Generating PLLL "PLLL" for QUARTUS_SYNTH
+Info: altpll_0: "PLLL" instantiated altpll "altpll_0"
+Info: PLLL: Done "PLLL" with 2 modules, 2 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
