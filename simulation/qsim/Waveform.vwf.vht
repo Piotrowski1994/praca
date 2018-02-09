@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "01/24/2018 01:31:35"
+-- Generated on "01/24/2018 18:22:45"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          PRACA
 -- 
@@ -34,10 +34,7 @@ END PRACA_vhd_vec_tst;
 ARCHITECTURE PRACA_arch OF PRACA_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
-SIGNAL address2 : STD_LOGIC_VECTOR(13 DOWNTO 0);
 SIGNAL CLOCK_24 : STD_LOGIC;
-SIGNAL HPOS1 : STD_LOGIC_VECTOR(9 DOWNTO 0);
-SIGNAL q2 : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL SW : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL vga2_b : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL vga2_g : STD_LOGIC_VECTOR(2 DOWNTO 0);
@@ -59,45 +56,37 @@ SIGNAL vga_g : STD_LOGIC_VECTOR(2 DOWNTO 0);
 SIGNAL VGA_HS : STD_LOGIC;
 SIGNAL vga_r : STD_LOGIC_VECTOR(2 DOWNTO 0);
 SIGNAL VGA_VS : STD_LOGIC;
-SIGNAL VPOS1 : STD_LOGIC_VECTOR(9 DOWNTO 0);
 COMPONENT PRACA
 	PORT (
-	address2 : BUFFER STD_LOGIC_VECTOR(13 DOWNTO 0);
 	CLOCK_24 : IN STD_LOGIC;
-	HPOS1 : BUFFER STD_LOGIC_VECTOR(9 DOWNTO 0);
-	q2 : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0);
 	SW : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-	vga2_b : BUFFER STD_LOGIC_VECTOR(1 DOWNTO 0);
-	vga2_g : BUFFER STD_LOGIC_VECTOR(2 DOWNTO 0);
-	VGA2_HS : BUFFER STD_LOGIC;
-	vga2_r : BUFFER STD_LOGIC_VECTOR(2 DOWNTO 0);
-	VGA2_VS : BUFFER STD_LOGIC;
-	vga3_b : BUFFER STD_LOGIC_VECTOR(1 DOWNTO 0);
-	vga3_g : BUFFER STD_LOGIC_VECTOR(2 DOWNTO 0);
-	VGA3_HS : BUFFER STD_LOGIC;
-	vga3_r : BUFFER STD_LOGIC_VECTOR(2 DOWNTO 0);
-	VGA3_VS : BUFFER STD_LOGIC;
-	vga4_b : BUFFER STD_LOGIC_VECTOR(1 DOWNTO 0);
-	vga4_g : BUFFER STD_LOGIC_VECTOR(2 DOWNTO 0);
-	VGA4_HS : BUFFER STD_LOGIC;
-	vga4_R : BUFFER STD_LOGIC_VECTOR(2 DOWNTO 0);
-	VGA4_VS : BUFFER STD_LOGIC;
-	vga_b : BUFFER STD_LOGIC_VECTOR(1 DOWNTO 0);
-	vga_g : BUFFER STD_LOGIC_VECTOR(2 DOWNTO 0);
-	VGA_HS : BUFFER STD_LOGIC;
-	vga_r : BUFFER STD_LOGIC_VECTOR(2 DOWNTO 0);
-	VGA_VS : BUFFER STD_LOGIC;
-	VPOS1 : BUFFER STD_LOGIC_VECTOR(9 DOWNTO 0)
+	vga2_b : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+	vga2_g : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+	VGA2_HS : OUT STD_LOGIC;
+	vga2_r : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+	VGA2_VS : OUT STD_LOGIC;
+	vga3_b : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+	vga3_g : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+	VGA3_HS : OUT STD_LOGIC;
+	vga3_r : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+	VGA3_VS : OUT STD_LOGIC;
+	vga4_b : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+	vga4_g : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+	VGA4_HS : OUT STD_LOGIC;
+	vga4_R : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+	VGA4_VS : OUT STD_LOGIC;
+	vga_b : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+	vga_g : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+	VGA_HS : OUT STD_LOGIC;
+	vga_r : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+	VGA_VS : OUT STD_LOGIC
 	);
 END COMPONENT;
 BEGIN
 	i1 : PRACA
 	PORT MAP (
 -- list connections between master ports and signals
-	address2 => address2,
 	CLOCK_24 => CLOCK_24,
-	HPOS1 => HPOS1,
-	q2 => q2,
 	SW => SW,
 	vga2_b => vga2_b,
 	vga2_g => vga2_g,
@@ -118,8 +107,7 @@ BEGIN
 	vga_g => vga_g,
 	VGA_HS => VGA_HS,
 	vga_r => vga_r,
-	VGA_VS => VGA_VS,
-	VPOS1 => VPOS1
+	VGA_VS => VGA_VS
 	);
 
 -- CLOCK_24

@@ -26,19 +26,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: devices manufactured by Intel and sold by Intel or its 
     Info: authorized distributors.  Please refer to the applicable 
     Info: agreement for further details.
-    Info: Processing started: Wed Jan 24 01:31:34 2018
+    Info: Processing started: Wed Jan 24 18:22:44 2018
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off praca -c praca --vector_source=C:/intelFPGA_lite/praca/Waveform.vwf --testbench_file=C:/intelFPGA_lite/praca/simulation/qsim/Waveform.vwf.vht
 Warning (20013): Ignored 14 assignments for entity "altera_dual_boot" -- entity does not exist in design
 Warning (20013): Ignored 35 assignments for entity "altera_reset_controller" -- entity does not exist in design
 Warning (20013): Ignored 19 assignments for entity "unsaved" -- entity does not exist in design
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
-_lite/praca/simulation/qsim/Waveform.vwf.vht for simulation
-Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 65 warnings
-    Info: Peak virtual memory: 500 megabytes
-    Info: Processing ended: Wed Jan 24 01:31:35 2018
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+ (201007): Can't find port "POSY[10]" in design
 
 Completed successfully. 
 
@@ -63,7 +58,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: devices manufactured by Intel and sold by Intel or its 
     Info: authorized distributors.  Please refer to the applicable 
     Info: agreement for further details.
-    Info: Processing started: Wed Jan 24 01:31:36 2018
+    Info: Processing started: Wed Jan 24 18:22:45 2018
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/intelFPGA_lite/praca/simulation/qsim/ praca -c praca
 Warning (20013): Ignored 14 assignments for entity "altera_dual_boot" -- entity does not exist in design
 Warning (20013): Ignored 35 assignments for entity "altera_reset_controller" -- entity does not exist in design
@@ -71,9 +66,9 @@ Warning (20013): Ignored 19 assignments for entity "unsaved" -- entity does not 
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file praca.vho in folder "C:/intelFPGA_lite/praca/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 517 megabytes
-    Info: Processing ended: Wed Jan 24 01:31:38 2018
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 520 megabytes
+    Info: Processing ended: Wed Jan 24 18:22:46 2018
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 Completed successfully. 
@@ -98,12 +93,14 @@ Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
 # ** Warning: (vlib-34) Library already exists at "work".
 
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:31:39 on Jan 24,2018
+# Start time: 18:22:49 on Jan 24,2018
 # vcom -work work praca.vho 
+
 # -- Loading package STANDARD
 
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
+
 # -- Loading package VITAL_Timing
 # -- Loading package VITAL_Primitives
 # -- Loading package dffeas_pack
@@ -113,11 +110,11 @@ Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
 # -- Compiling entity PRACA
 # -- Compiling architecture structure of PRACA
 
-# End time: 01:31:40 on Jan 24,2018, Elapsed time: 0:00:01
+# End time: 18:22:50 on Jan 24,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:31:40 on Jan 24,2018
+# Start time: 18:22:50 on Jan 24,2018
 # vcom -work work Waveform.vwf.vht 
 # -- Loading package STANDARD
 
@@ -125,11 +122,11 @@ Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
 # -- Loading package std_logic_1164
 # -- Compiling entity PRACA_vhd_vec_tst
 # -- Compiling architecture PRACA_arch of PRACA_vhd_vec_tst
-# End time: 01:31:40 on Jan 24,2018, Elapsed time: 0:00:00
+# End time: 18:22:50 on Jan 24,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # vsim -novopt -c -t 1ps -L fiftyfivenm -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.praca_vhd_vec_tst 
-# Start time: 01:31:40 on Jan 24,2018
+# Start time: 18:22:50 on Jan 24,2018
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -158,76 +155,38 @@ Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
 # Loading fiftyfivenm.fiftyfivenm_ram_pulse_generator(pgen_arch)
 # Loading fiftyfivenm.fiftyfivenm_unvm(behavior)
 # Loading fiftyfivenm.fiftyfivenm_adcblock(behavior)
-# ** Warning: Design size of 93475 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 99141 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # after#33
 
 # ** Note: Fiftyfivenm PLL locked to incoming clock
 #    Time: 180 ns  Iteration: 3  Instance: /praca_vhd_vec_tst/i1/\C|altpll_0|sd1|pll7\
-# Simulation time: 0 ps
+# Simulation time: 1460000 ps
 
-# Simulation time: 0 ps
+# Simulation time: 1460000 ps
 
-# Simulation time: 0 ps
+# Simulation time: 1460000 ps
 
-# Simulation time: 0 ps
+# Simulation time: 1460000 ps
 
-# Simulation time: 0 ps
+# Simulation time: 1460000 ps
 
-# Simulation time: 0 ps
+# Simulation time: 1460000 ps
 
-# Simulation time: 0 ps
+# Simulation time: 1460000 ps
 
-# Simulation time: 0 ps
+# Simulation time: 1460000 ps
 
-# Simulation time: 24660500 ps
+# Simulation time: 73760000 ps
 
-# Simulation time: 24660500 ps
+# Simulation time: 73760000 ps
 
-# Simulation time: 24660500 ps
-
-# Simulation time: 24660500 ps
-
-# Simulation time: 24660500 ps
-
-# Simulation time: 24660500 ps
-
-# Simulation time: 24660500 ps
-
-# Simulation time: 24660500 ps
-
-# Simulation time: 47866666 ps
-
-# Simulation time: 47866666 ps
-
-# Simulation time: 47866666 ps
-
-# Simulation time: 47866666 ps
-
-# Simulation time: 47866666 ps
-
-# Simulation time: 47866666 ps
-
-# Simulation time: 47866666 ps
-
-# Simulation time: 47866666 ps
-
-# Simulation time: 78420000 ps
-
-# Simulation time: 78420000 ps
-
-# Simulation time: 78420000 ps
-
-# Simulation time: 78420000 ps
-
-# Simulation time: 78420000 ps
-
-# Simulation time: 78420000 ps
+# Simulation time: 73760000 ps
 
 # ** Note: Fiftyfivenm PLL lost lock due to loss of input clock or the input clock is not detected within the allowed time frame.
 #    Time: 100060 ns  Iteration: 3  Instance: /praca_vhd_vec_tst/i1/\C|altpll_0|sd1|pll7\
 
-# End time: 01:32:57 on Jan 24,2018, Elapsed time: 0:01:17
+# End time: 18:23:21 on Jan 24,2018, Elapsed time: 0:00:31
 # Errors: 0, Warnings: 1
 
 Completed successfully. 
@@ -244,7 +203,91 @@ Warning: address2[15] - signal not found in VCD.
 
 Warning: address2[14] - signal not found in VCD.
 
-Writing the resulting VWF to C:/intelFPGA_lite/praca/simulation/qsim/praca_20180124013257.sim.vwf
+Warning: address2[13] - signal not found in VCD.
+
+Warning: address2[12] - signal not found in VCD.
+
+Warning: address2[11] - signal not found in VCD.
+
+Warning: address2[10] - signal not found in VCD.
+
+Warning: address2[9] - signal not found in VCD.
+
+Warning: address2[8] - signal not found in VCD.
+
+Warning: address2[7] - signal not found in VCD.
+
+Warning: address2[6] - signal not found in VCD.
+
+Warning: address2[5] - signal not found in VCD.
+
+Warning: address2[4] - signal not found in VCD.
+
+Warning: address2[3] - signal not found in VCD.
+
+Warning: address2[2] - signal not found in VCD.
+
+Warning: address2[1] - signal not found in VCD.
+
+Warning: address2[0] - signal not found in VCD.
+
+Warning: q2[7] - signal not found in VCD.
+
+Warning: q2[6] - signal not found in VCD.
+
+Warning: q2[5] - signal not found in VCD.
+
+Warning: q2[4] - signal not found in VCD.
+
+Warning: q2[3] - signal not found in VCD.
+
+Warning: q2[2] - signal not found in VCD.
+
+Warning: q2[1] - signal not found in VCD.
+
+Warning: q2[0] - signal not found in VCD.
+
+Warning: HPOS1[9] - signal not found in VCD.
+
+Warning: HPOS1[8] - signal not found in VCD.
+
+Warning: HPOS1[7] - signal not found in VCD.
+
+Warning: HPOS1[6] - signal not found in VCD.
+
+Warning: HPOS1[5] - signal not found in VCD.
+
+Warning: HPOS1[4] - signal not found in VCD.
+
+Warning: HPOS1[3] - signal not found in VCD.
+
+Warning: HPOS1[2] - signal not found in VCD.
+
+Warning: HPOS1[1] - signal not found in VCD.
+
+Warning: HPOS1[0] - signal not found in VCD.
+
+Warning: VPOS1[9] - signal not found in VCD.
+
+Warning: VPOS1[8] - signal not found in VCD.
+
+Warning: VPOS1[7] - signal not found in VCD.
+
+Warning: VPOS1[6] - signal not found in VCD.
+
+Warning: VPOS1[5] - signal not found in VCD.
+
+Warning: VPOS1[4] - signal not found in VCD.
+
+Warning: VPOS1[3] - signal not found in VCD.
+
+Warning: VPOS1[2] - signal not found in VCD.
+
+Warning: VPOS1[1] - signal not found in VCD.
+
+Warning: VPOS1[0] - signal not found in VCD.
+
+Writing the resulting VWF to C:/intelFPGA_lite/praca/simulation/qsim/praca_20180124182321.sim.vwf
 
 Finished VCD to VWF conversion.
 

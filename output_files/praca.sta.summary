@@ -3,31 +3,11 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'C|altpll_0|sd1|pll7|clk[0]'
-Slack : -12.735
-TNS   : -280.094
-
-Type  : Slow 1200mV 85C Model Setup 'licznik[0]'
-Slack : -10.898
-TNS   : -172.698
+Slack : 30.407
+TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'C|altpll_0|sd1|pll7|clk[0]'
-Slack : 0.357
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'licznik[0]'
-Slack : 2.924
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Recovery 'licznik[0]'
-Slack : -10.249
-TNS   : -162.828
-
-Type  : Slow 1200mV 85C Model Removal 'licznik[0]'
-Slack : 4.167
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'licznik[0]'
-Slack : 0.404
+Slack : 0.341
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_24'
@@ -35,35 +15,15 @@ Slack : 9.801
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'C|altpll_0|sd1|pll7|clk[0]'
-Slack : 19.676
+Slack : 19.678
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'C|altpll_0|sd1|pll7|clk[0]'
-Slack : -11.103
-TNS   : -237.718
-
-Type  : Slow 1200mV 0C Model Setup 'licznik[0]'
-Slack : -10.015
-TNS   : -158.297
+Slack : 31.150
+TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'C|altpll_0|sd1|pll7|clk[0]'
-Slack : 0.108
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'licznik[0]'
-Slack : 2.623
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Recovery 'licznik[0]'
-Slack : -9.481
-TNS   : -154.621
-
-Type  : Slow 1200mV 0C Model Removal 'licznik[0]'
-Slack : 3.947
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'licznik[0]'
-Slack : 0.314
+Slack : 0.306
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_24'
@@ -71,35 +31,15 @@ Slack : 9.736
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'C|altpll_0|sd1|pll7|clk[0]'
-Slack : 19.692
+Slack : 19.694
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'C|altpll_0|sd1|pll7|clk[0]'
-Slack : -5.202
-TNS   : -109.062
-
-Type  : Fast 1200mV 0C Model Setup 'licznik[0]'
-Slack : -4.518
-TNS   : -69.618
+Slack : 35.880
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'C|altpll_0|sd1|pll7|clk[0]'
-Slack : 0.009
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'licznik[0]'
-Slack : 1.226
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Recovery 'licznik[0]'
-Slack : -4.326
-TNS   : -67.701
-
-Type  : Fast 1200mV 0C Model Removal 'licznik[0]'
-Slack : 1.417
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'licznik[0]'
-Slack : 0.363
+Slack : 0.148
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_24'
@@ -107,7 +47,7 @@ Slack : 9.523
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'C|altpll_0|sd1|pll7|clk[0]'
-Slack : 19.713
+Slack : 19.712
 TNS   : 0.000
 
 ------------------------------------------------------------

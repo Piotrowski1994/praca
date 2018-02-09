@@ -1,7 +1,7 @@
 # do praca.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:31:39 on Jan 24,2018
+# Start time: 18:22:49 on Jan 24,2018
 # vcom -work work praca.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -14,20 +14,20 @@
 # -- Loading package fiftyfivenm_components
 # -- Compiling entity PRACA
 # -- Compiling architecture structure of PRACA
-# End time: 01:31:40 on Jan 24,2018, Elapsed time: 0:00:01
+# End time: 18:22:50 on Jan 24,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:31:40 on Jan 24,2018
+# Start time: 18:22:50 on Jan 24,2018
 # vcom -work work Waveform.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity PRACA_vhd_vec_tst
 # -- Compiling architecture PRACA_arch of PRACA_vhd_vec_tst
-# End time: 01:31:40 on Jan 24,2018, Elapsed time: 0:00:00
+# End time: 18:22:50 on Jan 24,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -novopt -c -t 1ps -L fiftyfivenm -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.praca_vhd_vec_tst 
-# Start time: 01:31:40 on Jan 24,2018
+# Start time: 18:22:50 on Jan 24,2018
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -56,42 +56,23 @@
 # Loading fiftyfivenm.fiftyfivenm_ram_pulse_generator(pgen_arch)
 # Loading fiftyfivenm.fiftyfivenm_unvm(behavior)
 # Loading fiftyfivenm.fiftyfivenm_adcblock(behavior)
-# ** Warning: Design size of 93475 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 99141 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # after#33
 # ** Note: Fiftyfivenm PLL locked to incoming clock
 #    Time: 180 ns  Iteration: 3  Instance: /praca_vhd_vec_tst/i1/\C|altpll_0|sd1|pll7\
-# Simulation time: 0 ps
-# Simulation time: 0 ps
-# Simulation time: 0 ps
-# Simulation time: 0 ps
-# Simulation time: 0 ps
-# Simulation time: 0 ps
-# Simulation time: 0 ps
-# Simulation time: 0 ps
-# Simulation time: 24660500 ps
-# Simulation time: 24660500 ps
-# Simulation time: 24660500 ps
-# Simulation time: 24660500 ps
-# Simulation time: 24660500 ps
-# Simulation time: 24660500 ps
-# Simulation time: 24660500 ps
-# Simulation time: 24660500 ps
-# Simulation time: 47866666 ps
-# Simulation time: 47866666 ps
-# Simulation time: 47866666 ps
-# Simulation time: 47866666 ps
-# Simulation time: 47866666 ps
-# Simulation time: 47866666 ps
-# Simulation time: 47866666 ps
-# Simulation time: 47866666 ps
-# Simulation time: 78420000 ps
-# Simulation time: 78420000 ps
-# Simulation time: 78420000 ps
-# Simulation time: 78420000 ps
-# Simulation time: 78420000 ps
-# Simulation time: 78420000 ps
+# Simulation time: 1460000 ps
+# Simulation time: 1460000 ps
+# Simulation time: 1460000 ps
+# Simulation time: 1460000 ps
+# Simulation time: 1460000 ps
+# Simulation time: 1460000 ps
+# Simulation time: 1460000 ps
+# Simulation time: 1460000 ps
+# Simulation time: 73760000 ps
+# Simulation time: 73760000 ps
+# Simulation time: 73760000 ps
 # ** Note: Fiftyfivenm PLL lost lock due to loss of input clock or the input clock is not detected within the allowed time frame.
 #    Time: 100060 ns  Iteration: 3  Instance: /praca_vhd_vec_tst/i1/\C|altpll_0|sd1|pll7\
-# End time: 01:32:57 on Jan 24,2018, Elapsed time: 0:01:17
+# End time: 18:23:21 on Jan 24,2018, Elapsed time: 0:00:31
 # Errors: 0, Warnings: 1
